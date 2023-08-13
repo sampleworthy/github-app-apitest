@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Repositories</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>GitHub Repositories</h1>
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'fetchTab')">Fetch Repositories</button>
+      <button class="tablinks" onclick="openTab(event, 'configTab')">Configuration</button>
+    </div>
+
+    <!-- Fetch Repositories Tab -->
+    <div id="fetchTab" class="tabcontent">
+      <form id="githubForm">
+        <label for="configUsername">GitHub Username:</label>
+        <input type="text" id="configUsername" name="configUsername" required>
+        <button type="button" onclick="fetchRepositories()">Fetch Repositories</button>
+      </form>
+
+      <div id="userInfo"></div>
+      <h2>Total Repositories: <span id="repoCount">0</span></h2>
+      <ul id="repoList"></ul>
+    </div>
+
+    <!-- Configuration Tab -->
+    <div id="configTab" class="tabcontent">
+      <form id="configForm">
+        <label for="configUsername">GitHub Username:</label>
+        <input type="text" id="configUsername" name="configUsername" required>
+        <label for="configToken">GitHub Personal Access Token:</label>
+        <input type="password" id="configToken" name="configToken" required>
+        <button type="button" onclick="saveConfig()">Save Config</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
+

@@ -10,9 +10,13 @@
 
 <body>
   <div class="container">
-    <h1>GitHub Repositories</h1>
+    <h1>
+      <img src="/Users/jaymlaws/Desktop/DotnetAPI/github-app-apitest/GitHub_Invertocat_Logo.svg.png" alt="Logo">
+      GitHub Repositories
+    </h1>
     <div class="tab">
       <button class="tablinks" onclick="openTab(event, 'fetchTab')">Fetch Repositories</button>
+      <button class="tablinks" onclick="openTab(event, 'createRepoTab')">Create Repository</button>
       <button class="tablinks" onclick="openTab(event, 'configTab')">Configuration</button>
     </div>
 
@@ -27,6 +31,20 @@
       <div id="userInfo"></div>
       <h2>Total Repositories: <span id="repoCount">0</span></h2>
       <ul id="repoList"></ul>
+    </div>
+
+    <!-- Create Repository Tab -->
+    <div id="createRepoTab" class="tabcontent">
+      <h2>Create Repository</h2>
+      <form id="createRepoForm">
+        <label for="repoName">Repository Name:</label>
+        <input type="text" id="repoName" name="repoName" required>
+        <button type="button" onclick="createRepository()">Create Repository</button>
+      </form>
+      <div id="gitUrl" style="display: none;">
+        <p>Git URL for the newly created repository:</p>
+        <p id="gitUrlLink"></p>
+      </div>
     </div>
 
     <!-- Configuration Tab -->
